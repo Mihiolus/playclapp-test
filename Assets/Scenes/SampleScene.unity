@@ -930,22 +930,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawn Interval
       objectReference: {fileID: 0}
-    - target: {fileID: 713718384445931609, guid: 968ea72ca34c8a94da293fcaa7b3d00e, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 713718384445931609, guid: 968ea72ca34c8a94da293fcaa7b3d00e, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 713718384445931609, guid: 968ea72ca34c8a94da293fcaa7b3d00e, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 2150773298
-      objectReference: {fileID: 0}
-    - target: {fileID: 713718384445931609, guid: 968ea72ca34c8a94da293fcaa7b3d00e, type: 3}
-      propertyPath: m_TextStyleHashCode
-      value: -1183493901
-      objectReference: {fileID: 0}
     - target: {fileID: 1437743230171989096, guid: 968ea72ca34c8a94da293fcaa7b3d00e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1045,18 +1029,6 @@ PrefabInstance:
     - target: {fileID: 1788920464595530364, guid: 968ea72ca34c8a94da293fcaa7b3d00e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3403476963540822608, guid: 968ea72ca34c8a94da293fcaa7b3d00e, type: 3}
-      propertyPath: m_InputType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3403476963540822608, guid: 968ea72ca34c8a94da293fcaa7b3d00e, type: 3}
-      propertyPath: m_KeyboardType
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3403476963540822608, guid: 968ea72ca34c8a94da293fcaa7b3d00e, type: 3}
-      propertyPath: m_CharacterValidation
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7197132013905689046, guid: 968ea72ca34c8a94da293fcaa7b3d00e, type: 3}
       propertyPath: m_AnchorMax.y
