@@ -14,6 +14,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private int _initCubes, _maxCubes;
 
+    [SerializeField]
+    private float _spawnInterval = 1f, _speed = 1f, _distance = 10f;
+    private float _timer;
+
     private void InitPool()
     {
         _cubePool = new ObjectPool<Transform>(
@@ -53,6 +57,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (_timer <= 0)
+        {
+            _cubePool.Get();
+            _timer = _spawnInterval;
+        }
+        _timer -= Time.deltaTime;
     }
 }
