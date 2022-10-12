@@ -595,6 +595,10 @@ MonoBehaviour:
   _cubePrefab: {fileID: 7286933954545771754, guid: bc94341297425db45bea26fa88870445, type: 3}
   _initCubes: 2
   _maxCubes: 100
+  _spawnInterval: 1
+  _speed: 1
+  _distance: 10
+  _moveDirection: {x: 1, y: 0, z: 0}
 --- !u!1001 &1484743069
 PrefabInstance:
   m_ObjectHideFlags: 0

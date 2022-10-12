@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -16,6 +13,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private float _spawnInterval = 1f, _speed = 1f, _distance = 10f;
+    [SerializeField]
+    private Vector3 _moveDirection;
     private float _timer;
 
     private void InitPool()
@@ -39,6 +38,7 @@ public class GameManager : MonoBehaviour
         var instance = Instantiate(_cubePrefab);
         instance.SetParent(transform);
         instance.gameObject.SetActive(false);
+        instance.GetComponent<Cube>().Pool = _cubePool;
         return instance;
     }
 
@@ -59,7 +59,10 @@ public class GameManager : MonoBehaviour
     {
         if (_timer <= 0)
         {
-            _cubePool.Get();
+            Transform cubeInstance = _cubePool.Get();
+            cubeInstance.position = transform.position;
+            Cube cubeScript = cubeInstance.GetComponent<Cube>();
+            cubeScript.Init(_moveDirection * _speed, _distance);
             _timer = _spawnInterval;
         }
         _timer -= Time.deltaTime;

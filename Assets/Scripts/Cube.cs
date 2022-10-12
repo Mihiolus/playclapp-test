@@ -1,18 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class Cube : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Vector3 _startingPosition, _velocity;
+    private float _distance;
+    public ObjectPool<Transform> Pool
     {
-        
+        get; set;
+    }
+
+    public void Init(Vector3 velocity, float distance)
+    {
+        _startingPosition = transform.position;
+        _velocity = velocity;
+        _distance = distance;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position += _velocity * Time.deltaTime;
+        if (Vector3.Distance(_startingPosition, transform.position) > _distance)
+        {
+            Pool.Release(transform);
+        }
     }
 }
