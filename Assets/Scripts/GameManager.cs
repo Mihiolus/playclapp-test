@@ -14,8 +14,6 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private NumberField _spawnIntervalField, _speedField, _distanceField;
 
-    [SerializeField]
-    private Vector3 _moveDirection;
     private float _timer;
 
     private void InitPool()
@@ -65,9 +63,15 @@ public class GameManager : MonoBehaviour
             Cube cubeScript = cubeInstance.GetComponent<Cube>();
             var speed = _speedField.CurrentValue;
             var distance = _distanceField.CurrentValue;
-            cubeScript.Init(_moveDirection * speed, distance);
+            cubeScript.Init(transform.forward * speed, distance);
             _timer = _spawnIntervalField.CurrentValue;
         }
         _timer -= Time.deltaTime;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + transform.forward * 2f);
     }
 }
