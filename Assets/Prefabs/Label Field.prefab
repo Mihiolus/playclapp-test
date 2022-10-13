@@ -297,8 +297,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4282000397
+  m_fontColor: {r: 0.05211819, g: 0.14275466, b: 0.2264151, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -654,6 +654,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _min: 1
   _max: 15
+  _default: 0.5
+  _decimalPlaces: 1
 --- !u!1 &7744547109159354286
 GameObject:
   m_ObjectHideFlags: 0
