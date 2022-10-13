@@ -26,4 +26,14 @@ public class Cube : MonoBehaviour
             Pool.Release(transform);
         }
     }
+
+    private void OnEnable()
+    {
+        SFXPlayer.Play(SFXPlayer.SoundType.CubeSpawn);
+    }
+
+    private void OnDisable()
+    {
+        SFXPlayer.Play(SFXPlayer.SoundType.CubeDespawn);
+    }
 }
