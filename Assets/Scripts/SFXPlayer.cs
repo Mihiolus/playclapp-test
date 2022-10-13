@@ -24,6 +24,8 @@ public class SFXPlayer : MonoBehaviour
 
     public static void Play(SoundType soundType)
     {
+        // Prevents an error at the shutdown of the application
+        if (!_instance) return;
         var clip = _instance._soundEffects.Single(s => s.soundType == soundType).clip;
         _instance._audio.PlayOneShot(clip);
     }
