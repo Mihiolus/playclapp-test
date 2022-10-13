@@ -778,10 +778,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 9ea33630389f5f94dbc891cabb43360b, type: 3}
   - soundType: 3
     clip: {fileID: 8300000, guid: 96f45ed288ca24644981bb0598bce2a1, type: 3}
-  - soundType: 0
-    clip: {fileID: 0}
-  - soundType: 0
-    clip: {fileID: 0}
+  - soundType: 1
+    clip: {fileID: 8300000, guid: 052f23c0b9a5b0341bb34fad22ce1784, type: 3}
 --- !u!4 &1168015270
 Transform:
   m_ObjectHideFlags: 0

@@ -38,6 +38,7 @@ public class NumberField : MonoBehaviour
         {
             field.text = parsedValue.ToString(GetFormatString());
             CurrentValue = parsedValue;
+            SFXPlayer.Play(SFXPlayer.SoundType.EndEdit);
         }
     }
 }

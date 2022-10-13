@@ -5,7 +5,7 @@ using System;
 [RequireComponent(typeof(AudioSource))]
 public class SFXPlayer : MonoBehaviour
 {
-    public enum SoundType { Typing, EndEdit, CubeSpawn, CubeDespawn }
+    public enum SoundType { EndEdit = 1, CubeSpawn = 2, CubeDespawn = 3 }
     [Serializable]
     private class SoundEffect
     {
