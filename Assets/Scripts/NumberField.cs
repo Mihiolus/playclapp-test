@@ -5,21 +5,20 @@ using TMPro;
 public class NumberField : MonoBehaviour
 {
     [SerializeField]
-    private float _min = 0f, _max = 1f;
+    private float _min = 0f, _max = 1f, _default = 0.5f;
     [SerializeField]
     private int _decimalPlaces = 1;
     private TMP_InputField field;
-    private float _oldValue;
+    public float CurrentValue { get; private set; }
 
     private void Awake()
     {
+        Debug.Assert(_min < _max && _default > _min && _default < _max);
+
         field = GetComponent<TMP_InputField>();
 
-        bool isFloat = float.TryParse(field.text, out _oldValue);
-        if (!isFloat)
-        {
-            _oldValue = _min;
-        }
+        field.text = _default.ToString(GetFormatString());
+        CurrentValue = _default;
     }
 
     private string GetFormatString()
@@ -31,21 +30,14 @@ public class NumberField : MonoBehaviour
     {
         float parsedValue;
         bool isFloat = float.TryParse(value, out parsedValue);
-        if (!isFloat)
+        if (!isFloat || parsedValue < _min || parsedValue > _max)
         {
-            field.text = _oldValue.ToString(GetFormatString());
-        }
-        if (parsedValue < _min)
-        {
-            field.text = _min.ToString(GetFormatString());
-        }
-        else if (parsedValue > _max)
-        {
-            field.text = _max.ToString(GetFormatString());
+            field.text = CurrentValue.ToString(GetFormatString());
         }
         else
         {
             field.text = parsedValue.ToString(GetFormatString());
+            CurrentValue = parsedValue;
         }
     }
 }

@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
     private int _initCubes, _maxCubes;
 
     [SerializeField]
-    private float _spawnInterval = 1f, _speed = 1f, _distance = 10f;
+    private NumberField _spawnIntervalField, _speedField, _distanceField;
+
     [SerializeField]
     private Vector3 _moveDirection;
     private float _timer;
@@ -62,8 +63,10 @@ public class GameManager : MonoBehaviour
             Transform cubeInstance = _cubePool.Get();
             cubeInstance.position = transform.position;
             Cube cubeScript = cubeInstance.GetComponent<Cube>();
-            cubeScript.Init(_moveDirection * _speed, _distance);
-            _timer = _spawnInterval;
+            var speed = _speedField.CurrentValue;
+            var distance = _distanceField.CurrentValue;
+            cubeScript.Init(_moveDirection * speed, distance);
+            _timer = _spawnIntervalField.CurrentValue;
         }
         _timer -= Time.deltaTime;
     }
