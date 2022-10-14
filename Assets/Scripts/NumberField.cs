@@ -36,8 +36,18 @@ public class NumberField : MonoBehaviour
     {
         float parsedValue;
         bool isFloat = float.TryParse(value, out parsedValue);
-        if (!isFloat || parsedValue < _min || parsedValue > _max)
+        if (!isFloat)
         {
+            UpdateDisplay();
+        }
+        else if (parsedValue < _min)
+        {
+            CurrentValue = _min;
+            UpdateDisplay();
+        }
+        else if (parsedValue > _max)
+        {
+            CurrentValue = _max;
             UpdateDisplay();
         }
         else
