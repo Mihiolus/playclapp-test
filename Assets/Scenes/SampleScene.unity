@@ -633,9 +633,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28bbf738b949d7044ba2f562321c3592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cubePrefab: {fileID: 7286933954545771754, guid: bc94341297425db45bea26fa88870445, type: 3}
-  _initCubes: 2
-  _maxCubes: 100
+  _cubePool:
+    _prefab: {fileID: 3322538656997532824, guid: bc94341297425db45bea26fa88870445, type: 3}
+    _initialNumber: 10
+    _maxNumber: 100
   _spawnIntervalField: {fileID: 702033054}
   _speedField: {fileID: 836896331}
   _distanceField: {fileID: 398791194}

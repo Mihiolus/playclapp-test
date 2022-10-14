@@ -1,11 +1,10 @@
 using UnityEngine;
-using UnityEngine.Pool;
 
 public class Cube : MonoBehaviour
 {
     private Vector3 _startingPosition, _velocity;
     private float _distance;
-    public IObjectPool<Transform> Pool
+    public ObjectPool Pool
     {
         get; set;
     }
