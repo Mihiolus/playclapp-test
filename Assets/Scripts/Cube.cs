@@ -5,7 +5,7 @@ public class Cube : MonoBehaviour
 {
     private Vector3 _startingPosition, _velocity;
     private float _distance;
-    public ObjectPool<Transform> Pool
+    public IObjectPool<Transform> Pool
     {
         get; set;
     }
@@ -25,15 +25,5 @@ public class Cube : MonoBehaviour
         {
             Pool.Release(transform);
         }
-    }
-
-    private void OnEnable()
-    {
-        SFXPlayer.Play(SFXPlayer.SoundType.CubeSpawn);
-    }
-
-    private void OnDisable()
-    {
-        SFXPlayer.Play(SFXPlayer.SoundType.CubeDespawn);
     }
 }

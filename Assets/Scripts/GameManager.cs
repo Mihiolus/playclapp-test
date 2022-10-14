@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     {
         cube.SetParent(null);
         cube.gameObject.SetActive(true);
+        SFXPlayer.Play(SFXPlayer.SoundType.CubeSpawn);
     }
 
     private Transform CreateCube()
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour
     {
         cube.SetParent(transform);
         cube.gameObject.SetActive(false);
+        SFXPlayer.Play(SFXPlayer.SoundType.CubeDespawn);
     }
 
     // Start is called before the first frame update
