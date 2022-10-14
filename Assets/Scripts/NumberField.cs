@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 [RequireComponent(typeof(TMPro.TMP_InputField))]
 public class NumberField : MonoBehaviour
@@ -9,7 +10,17 @@ public class NumberField : MonoBehaviour
     [SerializeField]
     private int _decimalPlaces = 1;
     private TMP_InputField field;
-    public float CurrentValue { get; private set; }
+
+    private float _currentValue;
+
+    public float CurrentValue
+    {
+        get => _currentValue;
+        private set
+        {
+            _currentValue = (float)Math.Round(value, _decimalPlaces);
+        }
+    }
 
     private void Awake()
     {
@@ -17,13 +28,8 @@ public class NumberField : MonoBehaviour
 
         field = GetComponent<TMP_InputField>();
 
-        field.text = _default.ToString(GetFormatString());
         CurrentValue = _default;
-    }
-
-    private string GetFormatString()
-    {
-        return $"N{_decimalPlaces}";
+        UpdateDisplay();
     }
 
     public void OnEndEdit(string value)
@@ -32,13 +38,18 @@ public class NumberField : MonoBehaviour
         bool isFloat = float.TryParse(value, out parsedValue);
         if (!isFloat || parsedValue < _min || parsedValue > _max)
         {
-            field.text = CurrentValue.ToString(GetFormatString());
+            UpdateDisplay();
         }
         else
         {
-            field.text = parsedValue.ToString(GetFormatString());
             CurrentValue = parsedValue;
+            UpdateDisplay();
             SFXPlayer.Play(SFXPlayer.SoundType.EndEdit);
         }
+    }
+
+    private void UpdateDisplay()
+    {
+        field.text = CurrentValue.ToString();
     }
 }
