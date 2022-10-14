@@ -359,14 +359,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Distance
       objectReference: {fileID: 0}
-    - target: {fileID: 713718384445931609, guid: 968ea72ca34c8a94da293fcaa7b3d00e, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 713718384445931609, guid: 968ea72ca34c8a94da293fcaa7b3d00e, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 1344157012256014885, guid: 968ea72ca34c8a94da293fcaa7b3d00e, type: 3}
       propertyPath: m_text
       value: Distance
@@ -814,14 +806,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Speed
       objectReference: {fileID: 0}
-    - target: {fileID: 713718384445931609, guid: 968ea72ca34c8a94da293fcaa7b3d00e, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 713718384445931609, guid: 968ea72ca34c8a94da293fcaa7b3d00e, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 1344157012256014885, guid: 968ea72ca34c8a94da293fcaa7b3d00e, type: 3}
       propertyPath: m_text
       value: Speed
